@@ -9,9 +9,13 @@
 
 ## Required Configuration
 
-Laravel 1- Import busBooking.sql into database called busBooking and change username and password to root
+1- Import busBooking.sql into database called busBooking and change username and password to root
 
-2 - authentication credentials:
+2- Run composer install on the project folder from terminal
+
+3- Run php artisan serve
+
+4 - authentication credentials:
 	email: shady@yahoo.com
 	password: 12345678
 
