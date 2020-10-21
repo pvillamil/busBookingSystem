@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\apiController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::middleware("auth:api")->group(function() {
+
+Route::get('/', [apiController::class, "index"]);
+
+Route::get("/tripBooking", [apiController::class, "tripBooking"])->name("tripBooking");
+
+Route::get("/checkAvailableSeats", [apiController::class, "checkAvailableSeats"]);
+
+Route::post("/addBooking", [apiController::class, "addBooking"]);
 });

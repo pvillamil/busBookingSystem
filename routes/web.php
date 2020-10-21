@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\tripsController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [tripsController::class, "index"]);
+
+Route::get("/tripBooking/{trip}", [tripsController::class, "tripBooking"])->where("trip", '[0-9]+')->name("tripBooking");
+
+Route::get("/checkAvailableSeats/{trip}", [tripsController::class, "checkAvailableSeats"]);
+
+Route::post("/addBooking", [tripsController::class, "addBooking"]);
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
