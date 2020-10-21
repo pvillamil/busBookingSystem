@@ -39,17 +39,7 @@ CREATE TABLE `Bookings` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `Bookings`
---
 
-INSERT INTO `Bookings` (`id`, `trip_id`, `start_station_id`, `end_station_id`, `seat_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 2, 1, 1, '2020-10-21 09:59:01', '2020-10-21 09:59:01'),
-(2, 1, 1, 3, 2, 1, '2020-10-21 10:00:27', '2020-10-21 10:00:27'),
-(3, 1, 3, 4, 1, 1, '2020-10-21 10:00:38', '2020-10-21 10:00:38'),
-(4, 1, 3, 4, 2, 1, '2020-10-21 10:00:43', '2020-10-21 10:00:43'),
-(5, 1, 1, 4, 3, 1, '2020-10-21 10:00:49', '2020-10-21 10:00:49'),
-(6, 1, 2, 4, 4, 1, '2020-10-21 10:00:54', '2020-10-21 10:00:54');
 
 -- --------------------------------------------------------
 
